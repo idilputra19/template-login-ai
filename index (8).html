@@ -1,0 +1,188 @@
+<html>
+ <head>
+  <title>
+   Login Page
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+            transition: background-color 0.3s ease;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            max-width: 900px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+        }
+        .container .image-column, .container .form-column {
+            flex: 1;
+            position: relative;
+        }
+        .container .image-column img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .container:hover .image-column img {
+            transform: scale(1.05);
+        }
+        .form-column {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.7);
+        }
+        .form-column .logo {
+            margin-bottom: 20px;
+        }
+        .form-column .logo img {
+            width: 60px;
+            height: 60px;
+        }
+        .form-column h2 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        .form-column .input-group {
+            width: 100%;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .form-column .input-group input {
+            width: 100%;
+            padding: 15px 50px 15px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .form-column .input-group input:focus {
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .form-column .input-group i {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #fff;
+            cursor: pointer;
+        }
+        .form-column .btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(90deg, #00aaff, #0066ff);
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        .form-column .btn:hover {
+            background: linear-gradient(90deg, #0066ff, #00aaff);
+            transform: scale(1.05);
+        }
+        .form-column .link {
+            color: #fff;
+            margin-top: 20px;
+        }
+        .form-column .link a {
+            color: #00aaff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .form-column .link a:hover {
+            color: #0066ff;
+        }
+        .footer {
+            color: #fff;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .container .image-column, .container .form-column {
+                width: 100%;
+            }
+            .container .image-column {
+                height: 200px;
+            }
+        }
+  </style>
+ </head>
+ <body>
+  <div class="container">
+   <div class="image-column">
+    <img alt="Background image of a port with cranes and containers" height="600" src="https://storage.googleapis.com/a1aa/image/leRw5qQFeImKOU2kkqBWfx3kqFB0BJwFboMjastvO6MiXaOoA.jpg" width="450"/>
+   </div>
+   <div class="form-column">
+    <div class="logo">
+     <img alt="Company logo" height="60" src="https://storage.googleapis.com/a1aa/image/pg57ptNKAELJFJBZTQqIr1auQL4zS9c1N71qXOrT7Xl8SzBF.jpg" width="60"/>
+    </div>
+    <h2>
+     Acessar sua conta
+    </h2>
+    <div class="input-group">
+     <input placeholder="Username" type="text" value="username"/>
+     <i class="fas fa-user">
+     </i>
+    </div>
+    <div class="input-group">
+     <input id="password" placeholder="Password" type="password"/>
+     <i class="fas fa-eye" id="togglePassword">
+     </i>
+    </div>
+    <button class="btn">
+     Login
+    </button>
+    <div class="link">
+     <span>
+      Não cadastrado?
+      <a href="#">
+       Crie uma conta grátis
+      </a>
+     </span>
+    </div>
+    <div class="footer">
+     © 2022, Company name
+    </div>
+   </div>
+  </div>
+  <script>
+   const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#password');
+
+        togglePassword.addEventListener('click', function (e) {
+            // toggle the type attribute
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            // toggle the eye slash icon
+            this.classList.toggle('fa-eye-slash');
+        });
+  </script>
+ </body>
+</html>
