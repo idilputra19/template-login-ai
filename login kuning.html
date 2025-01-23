@@ -1,0 +1,193 @@
+<html>
+<head>
+    <title>Sign In / Sign Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+        }
+        .container {
+            display: flex;
+            width: 90%;
+            max-width: 800px;
+            height: 90%;
+            max-height: 500px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .left, .right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        .left {
+            background-color: #fff;
+        }
+        .right {
+            background-color: #ffb100;
+            color: #fff;
+        }
+        .left h2, .right h2 {
+            margin: 0;
+            font-size: 2em;
+            font-weight: bold;
+        }
+        .left .social-icons {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .left .social-icons a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            color: #333;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .left .social-icons a:hover {
+            background-color: #ffb100;
+            color: #fff;
+        }
+        .left .input-group {
+            width: 100%;
+            margin: 10px 0;
+        }
+        .left .input-group input {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+        .left .input-group input:focus {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            outline: none;
+        }
+        .left .input-group button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background-color: #ffb100;
+            color: #fff;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .left .input-group button:hover {
+            background-color: #e09e00;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .left .forgot-password {
+            margin-top: 10px;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .left .forgot-password:hover {
+            color: #ffb100;
+        }
+        .right .signup-button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            background-color: #fff;
+            color: #ffb100;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .right .signup-button:hover {
+            background-color: #ffb100;
+            color: #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        @media (max-width: 1024px) {
+            .container {
+                flex-direction: column;
+                width: 90%;
+                height: auto;
+            }
+            .left, .right {
+                width: 100%;
+                padding: 20px;
+            }
+        }
+        @media (max-width: 768px) {
+            .left h2, .right h2 {
+                font-size: 1.8em;
+            }
+            .left .input-group input, .left .input-group button, .right .signup-button {
+                padding: 12px;
+                font-size: 0.9em;
+            }
+            .left .social-icons a {
+                width: 35px;
+                height: 35px;
+                font-size: 1em;
+            }
+        }
+        @media (max-width: 480px) {
+            .left h2, .right h2 {
+                font-size: 1.5em;
+            }
+            .left .input-group input, .left .input-group button, .right .signup-button {
+                padding: 10px;
+                font-size: 0.8em;
+            }
+            .left .social-icons a {
+                width: 30px;
+                height: 30px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <h2>Sign in</h2>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-google"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+            <div class="input-group">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <button>SIGN IN</button>
+            </div>
+            <a href="#" class="forgot-password">Forgot your password?</a>
+        </div>
+        <div class="right">
+            <h2>Welcome To<br>TheGeekFlux!</h2>
+            <p>New Here?</p>
+            <button class="signup-button">SIGN UP</button>
+        </div>
+    </div>
+</body>
+</html>
