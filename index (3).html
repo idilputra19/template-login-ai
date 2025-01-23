@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Create an Account</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    <script>
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('password');
+            const eyeIcon = document.getElementById('eye-icon');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.classList.remove('fa-eye');
+                eyeIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.add('fa-eye');
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#1E1E2C] text-white">
+    <div class="flex min-h-screen items-center justify-center p-4">
+        <div class="bg-[#2A2A3C] rounded-lg shadow-lg flex flex-col md:flex-row max-w-4xl w-full overflow-hidden">
+            <div class="md:w-1/2 relative">
+                <img alt="A beautiful desert landscape with a purple sky" class="w-full h-full object-cover" src="https://storage.googleapis.com/a1aa/image/lpOLHPErNlaCE56eCBNQHohS5bXg3BqsWMXEixhRf2HIx3GUA.jpg"/>
+                <div class="absolute top-4 left-4">
+                    <img alt="AMU logo" class="h-10" src="https://storage.googleapis.com/a1aa/image/dr9tJsNoOh6UDlufkVeOWjp6VrmX7bflsVohGnkD2XUJivNoA.jpg"/>
+                </div>
+                <button class="absolute top-4 right-4 bg-[#3B3B4F] text-white py-2 px-4 rounded-full flex items-center">
+                    <i class="fas fa-arrow-left mr-2"></i>
+                    Hello
+                </button>
+                <div class="absolute bottom-8 left-8">
+                    <h2 class="text-2xl font-semibold">
+                        SI KAMEK<br>
+                        Aplikasi pembinaan Karakter dan Mengapresiasi prestasi peserta didik.
+                    </h2>
+                </div>
+            </div>
+            <div class="md:w-1/2 p-8 pb-28">
+                <h1 class="text-3xl font-semibold mb-4">Login</h1>
+                <p class="mb-4">
+                    Don't have an account?
+                    <a class="text-[#A3A3FF]" href="#">Sign up</a>
+                </p>
+                <form>
+                    <div class="mb-4">
+                        <input class="w-full p-3 rounded bg-[#3B3B4F] text-white border border-[#4A4A5A]" placeholder="Username" type="text"/>
+                    </div>
+                    <div class="mb-4 relative">
+                        <input id="password" class="w-full p-3 rounded bg-[#3B3B4F] text-white border border-[#4A4A5A]" placeholder="Password" type="password"/>
+                        <i id="eye-icon" class="fas fa-eye absolute right-3 top-3 text-gray-400 cursor-pointer" onclick="togglePasswordVisibility()"></i>
+                    </div>
+                    <div class="mb-4 flex items-center">
+                        <input class="mr-2" id="terms" type="checkbox"/>
+                        <label class="text-gray-400" for="terms">
+                            I agree to the
+                            <a class="text-[#A3A3FF]" href="#">Terms & Conditions</a>
+                        </label>
+                    </div>
+                    <button class="w-full bg-[#6C63FF] py-3 rounded text-white font-semibold">Login</button>
+                </form>
+                <div class="mt-4 text-center text-gray-400">Or login with</div>
+                <div class="mt-8 flex justify-center space-x-4">
+                    <button class="bg-[#3B3B4F] py-2 px-4 rounded flex items-center">
+                        <i class="fab fa-google mr-2 text-white"></i>
+                        Google
+                    </button>
+                    <button class="bg-[#3B3B4F] py-2 px-4 rounded flex items-center">
+                        <i class="fab fa-apple mr-2 text-white"></i>
+                        Apple
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
